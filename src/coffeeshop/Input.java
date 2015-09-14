@@ -10,5 +10,5 @@ package coffeeshop;
  * @author Alyson
  */
 public interface Input {
-    
+    public abstract String order();
 }

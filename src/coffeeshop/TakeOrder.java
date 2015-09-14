@@ -11,11 +11,25 @@ package coffeeshop;
  * @author Alyson
  */
 public class TakeOrder {
+    //properties
+    private String coffeeDrink;
     //getting the drink object
     private MakeCoffee drink;
+    private Input input;
     
-    public TakeOrder(MakeCoffee drink){
+    public TakeOrder(Input input, MakeCoffee drink){
+        this.input = input;
         this.drink = drink;
+    }
+    
+    //take order from input and make coffee drink
+    public void makeDrink(){
+        coffeeDrink = input.order();
+        drink.makeDrink();
+    }
+
+    public String getCoffeeDrink() {
+        return coffeeDrink;
     }
     
 }
