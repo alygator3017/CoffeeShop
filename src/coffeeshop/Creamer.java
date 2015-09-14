@@ -10,5 +10,5 @@ package coffeeshop;
  * @author Alyson
  */
 public interface Creamer {
-    public abstract void addCream();
+    public abstract String addCream();
 }

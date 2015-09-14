@@ -10,5 +10,5 @@ package coffeeshop;
  * @author Alyson
  */
 public interface Caffeine {
-    public abstract void regularOrDecaf();
+    public abstract String regularOrDecaf();
 }

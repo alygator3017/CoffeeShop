@@ -19,7 +19,7 @@ public class ConsoleOrderInput implements Input {
 //        System.out.println("What kind of drink would you like? We have an Americano, a latte or a Black coffee");
         //scanner keyboard
         Scanner keyboard = new Scanner(System.in);
-        String drink = keyboard.nextLine().toLowerCase();
+        String input = keyboard.nextLine().toLowerCase();
         //check
 //        while(!(drink.equals("americano"))&& !(drink.equals("latte")) && !(drink.equals("black coffee"))){
 //            System.out.println("I'm sorry, you entered an incorrect drink.");
@@ -27,7 +27,7 @@ public class ConsoleOrderInput implements Input {
 //            drink = keyboard.nextLine().toLowerCase();
 //        }
         //return keyboard string
-        return drink;
+        return input;
         
 
     }

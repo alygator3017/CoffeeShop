@@ -9,6 +9,6 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public interface Espresso {
-    public abstract String addEspressoShot();
+public interface Printer {
+    public abstract String println(String line);
 }

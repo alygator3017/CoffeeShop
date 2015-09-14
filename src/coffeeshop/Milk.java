@@ -10,5 +10,5 @@ package coffeeshop;
  * @author Alyson
  */
 public interface Milk {
-    public abstract void typeOfMilk();
+    public abstract String typeOfMilk();
 }
