@@ -14,10 +14,10 @@ public class Order {
     //properties
     private String coffeeDrink;
     //getting the drink object
-    private Coffee drink;
-    private String order;
-    private Input input;
-    private Printer output;
+    private final Coffee drink;
+    private final String order;
+    private final Input input;
+    private final Printer output;
     
     public Order(String order, Input input , Coffee drink, Printer output){
         this.order = order;

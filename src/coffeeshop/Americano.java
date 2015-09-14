@@ -23,7 +23,7 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor,
         String numShots = addEspressoShot();
         String creamer = addCream();
         String flavor = addFlavor();
-        String order = size + caffeine + numShots + " shot" + creamer + " " + flavor;
+        String order = size + caffeine + numShots + " shot" + creamer + flavor;
         return order;
     }
 
@@ -57,7 +57,7 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor,
             milk = typeOfMilk();
             return " with " + milk;
         }else{
-            return " " + cream + " creamer";
+            return "";
         }
            
         
@@ -97,7 +97,7 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor,
         if(flavor.equals("none")){
             flavor = "";
         }
-        return flavor + " ";
+        return " " + flavor + " ";
     }
 
 
@@ -112,7 +112,7 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor,
             printer.println("Incorrect size, please enter: small, medium or large");
             cupSize = input.order();
         }
-        return cupSize + " ";
+        return cupSize;
     }
 
     @Override
