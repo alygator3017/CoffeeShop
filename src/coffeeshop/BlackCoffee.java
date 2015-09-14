@@ -41,7 +41,7 @@ public class BlackCoffee implements Coffee, Size, Creamer, Milk, Caffeine {
         //do something
         if (cream.equals("yes")) {
             milk = typeOfMilk();
-            return " with " + milk;
+            return "with a " + milk;
         }else{
             return cream + " creamer";
         }
@@ -77,7 +77,7 @@ public class BlackCoffee implements Coffee, Size, Creamer, Milk, Caffeine {
             printer.println("Incorrect size, please enter: small, medium or large");
             cupSize = input.order();
         }
-        return cupSize + " ";
+        return cupSize;
     }
 
     @Override

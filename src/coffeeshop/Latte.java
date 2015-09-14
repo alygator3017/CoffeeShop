@@ -64,6 +64,9 @@ public class Latte implements Coffee, Size, Espresso, Milk, Flavor, Caffeine {
             printer.println("Caramel, Vanilla, Mocha, White Chocolate or none?");
             flavor = input.order();
         }
+        if(flavor.equals("none")){
+            return "";
+        }
         return flavor;
     }
 
@@ -78,7 +81,7 @@ public class Latte implements Coffee, Size, Espresso, Milk, Flavor, Caffeine {
             printer.println("Incorrect size, please enter: small, medium or large");
             cupSize = input.order();
         }
-        return cupSize + " ";
+        return cupSize;
     }
 
     @Override
