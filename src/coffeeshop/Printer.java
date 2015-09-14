@@ -10,5 +10,5 @@ package coffeeshop;
  * @author Alyson
  */
 public interface Printer {
-    public abstract String println(String line);
+    public abstract void println(String line);
 }

@@ -10,13 +10,15 @@ package coffeeshop;
  * @author Alyson
  */
 public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor {
-    
-    //access input
+    private String size;
+//    //access input and printer
     Input input = new ConsoleOrderInput();
+    Printer printer = new ConsolePrinter();
+    
 
     @Override
     public void makeDrink() {
-        String size = size();
+        size = size();
         String numShots = addEspressoShot();
         String creamer = addCream();
         String flavor = addFlavor();
@@ -25,20 +27,27 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor 
 
     @Override
     public String addEspressoShot() {
+        String shots;
+        //find shot amount
+        switch (size) {
+            case "small": return shots = "2";
+            case "medium": return shots = "3";
+            default: return shots = "4";
+        }
         
     }
 
     @Override
     public String addCream() {
         //ask for cream
-        System.out.println("Would you like room for cream?");
+        printer.println("Would you like room for cream?");
         //assign to string
         String cream = input.order();
         String milk;
         //check
         while (!(cream.equals("yes")) && !(cream.equals("no"))) {
-            System.out.println("Please enter yes or no");
-            System.out.println("Would you like room for cream?");
+            printer.println("Please enter yes or no");
+            printer.println("Would you like room for cream?");
             cream = input.order();
         }
         //do something
@@ -55,12 +64,12 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor 
     @Override
     public String typeOfMilk() {
         //ask what kind of milk
-        System.out.println("Please choose your milk: Skim or creamer");
+        printer.println("Please choose your milk: Skim or creamer");
         //assign to string
         String milk = input.order();
         //check
         while (!(milk.equals("skim")) && !(milk.equals("creamer"))) {
-            System.out.println("Sorry we do not have that, please enter Skim or Creamer");
+            printer.println("Sorry we do not have that, please enter Skim or Creamer");
             milk = input.order();
         }
         return milk;
@@ -68,18 +77,22 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor 
 
     @Override
     public String addFlavor() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
 
     @Override
     public String size() {
         // ask for size
-        System.out.println("What size? small, medium or large?");
+        printer.println("What size? small, medium or large?");
         //assign to string
         String size = input.order();
         //check
-        while(!())
+        while(!(size.equals("small")) && !(size.equals("medium")) && !(size.equals("large"))){
+            printer.println("Incorrect size, please enter: small, medium or large");
+            size = input.order();
+        }
+        return size;
     }
 
 }

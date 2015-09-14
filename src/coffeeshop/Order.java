@@ -15,16 +15,20 @@ public class Order {
     private String coffeeDrink;
     //getting the drink object
     private Coffee drink;
-    private String input;
+    private String order;
+    private Input input;
+    private Printer output;
     
-    public Order(String input, Coffee drink){
+    public Order(String order, Input input , Coffee drink, Printer output){
+        this.order = order;
         this.input = input;
         this.drink = drink;
+        this.output = output;
     }
     
     //take order from input and make coffee drink
     public void makeDrink(){
-        coffeeDrink = input;
+        coffeeDrink = order;
         drink.makeDrink();
     }
 
