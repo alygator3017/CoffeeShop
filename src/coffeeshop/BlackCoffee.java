@@ -9,10 +9,20 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public class BlackCoffee implements Coffee {
+public class BlackCoffee implements Coffee, Creamer, Milk {
 
     @Override
     public void makeDrink() {
+        System.out.println("In Black Coffee Make Drink");
+    }
+
+    @Override
+    public void addCream() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void typeOfMilk() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
