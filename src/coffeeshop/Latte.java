@@ -9,7 +9,7 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public class Latte extends Flavor implements Coffee, Size, Espresso, Milk, Caffeine {
+public class Latte extends FlavoredCoffee implements Coffee, Size, Espresso, Milk, Caffeine {
     private String size;
     
     //access input and printer

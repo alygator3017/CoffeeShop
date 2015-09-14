@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Alyson
  */
-public abstract class Flavor {
+public abstract class FlavoredCoffee {
     
     
     public String addFlavor() {

@@ -9,7 +9,7 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public class Americano extends Flavor implements Coffee, Size, Espresso, Creamer, Milk, Caffeine {
+public class Americano extends FlavoredCoffee implements Coffee, Size, Espresso, Creamer, Milk, Caffeine {
     private String size;
     //access input and printer
     Input input = new ConsoleOrderInput();
