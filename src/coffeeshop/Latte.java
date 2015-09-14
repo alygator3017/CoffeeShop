@@ -32,9 +32,9 @@ public class Latte implements Coffee, Size, Espresso, Milk, Flavor, Caffeine {
         String shots;
         //find shot amount
         switch (size) {
-            case "small": return shots = "Single";
-            case "medium": return shots = "Double";
-            default: return shots = "Double";
+            case "small": return shots = "single";
+            case "medium": return shots = "double";
+            default: return shots = "double";
         }
     }
 
@@ -90,9 +90,9 @@ public class Latte implements Coffee, Size, Espresso, Milk, Flavor, Caffeine {
         //check
         while(!(type.equals("regular")) && !(type.equals("decaf"))){
             printer.println("incorrect entry, please enter: regular or decaf");
-            type = " " + input.order() + " ";
+            type = input.order();
         }
-        return type;
+        return " " + type + " ";
     }
 
     

@@ -89,9 +89,9 @@ public class BlackCoffee implements Coffee, Size, Creamer, Milk, Caffeine {
         //check
         while(!(type.equals("regular")) && !(type.equals("decaf"))){
             printer.println("incorrect entry, please enter: regular or decaf");
-            type = " " + input.order() + " ";
+            type = input.order();
         }
-        return type;
+        return " " + type + " ";
     }
 
   

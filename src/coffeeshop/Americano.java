@@ -23,7 +23,7 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor,
         String numShots = addEspressoShot();
         String creamer = addCream();
         String flavor = addFlavor();
-        String order = size + caffeine + numShots + " shot"+ creamer + " " + flavor;
+        String order = size + caffeine + " " + numShots + " shot" + " " + creamer + " " + flavor;
         return order;
     }
 
@@ -32,9 +32,9 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor,
         String shots;
         //find shot amount
         switch (size) {
-            case "small": return shots = "Double";
-            case "medium": return shots = "Triple";
-            default: return shots = "Four";
+            case "small": return shots = "double";
+            case "medium": return shots = "triple";
+            default: return shots = "four";
         }
         
     }
@@ -124,9 +124,9 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor,
         //check
         while(!(type.equals("regular")) && !(type.equals("decaf"))){
             printer.println("incorrect entry, please enter: regular or decaf");
-            type = " " + input.order() + " ";
+            type = input.order();
         }
-        return type;
+        return " " + type + " ";
     }
 
 }
