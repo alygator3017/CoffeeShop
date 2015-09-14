@@ -30,7 +30,7 @@ public class Order {
     public String makeDrink(){
         coffeeDrink = order;
         String drinkInfo = drink.makeDrink();
-        return "Here is your " + drinkInfo + " " + coffeeDrink;
+        return "Here is your " + drinkInfo  + coffeeDrink;
     }
 
     public String getCoffeeDrink() {

@@ -97,7 +97,7 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor,
         if(flavor.equals("none")){
             flavor = "";
         }
-        return flavor;
+        return flavor + " ";
     }
 
 

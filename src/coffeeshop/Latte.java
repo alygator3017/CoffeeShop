@@ -67,7 +67,7 @@ public class Latte implements Coffee, Size, Espresso, Milk, Flavor, Caffeine {
         if(flavor.equals("none")){
             return "";
         }
-        return flavor;
+        return flavor + " ";
     }
 
     @Override

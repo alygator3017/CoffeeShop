@@ -43,7 +43,7 @@ public class BlackCoffee implements Coffee, Size, Creamer, Milk, Caffeine {
             milk = typeOfMilk();
             return "with a " + milk;
         }else{
-            return cream + " creamer";
+            return "";
         }
     }
 
