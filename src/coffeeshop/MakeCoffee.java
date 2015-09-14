@@ -12,4 +12,5 @@ package coffeeshop;
  */
 public interface MakeCoffee {
     public abstract void makeDrink();
+    
 }
