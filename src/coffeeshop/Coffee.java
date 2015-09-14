@@ -10,7 +10,7 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public interface MakeCoffee {
+public interface Coffee {
     public abstract void makeDrink();
     
 }

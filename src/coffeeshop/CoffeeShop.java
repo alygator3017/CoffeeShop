@@ -14,13 +14,19 @@ public class CoffeeShop {
         
         //create input object, drink object, size object?, milk object?
         Input input = new ConsoleOrderInput();
+        Coffee drink;
         if(input.order().equals("Americano")){
-            MakeCoffee drink = new Americano();
+            drink = new Americano();
         }else if(input.order().equals("Latte")){
-            MakeCoffee drink = new Latte();
+            drink = new Latte();
         }else{
-            MakeCoffee drink = new BlackCoffee();
+            drink = new BlackCoffee();
         }
+        
+        //create order
+        Order order = new Order(input, drink);
+        order.makeDrink();
+        
     }
     
 }

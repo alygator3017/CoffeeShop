@@ -9,7 +9,7 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public class BlackCoffee implements MakeCoffee {
+public class BlackCoffee implements Coffee {
 
     @Override
     public void makeDrink() {

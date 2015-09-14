@@ -10,14 +10,14 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public class TakeOrder {
+public class Order {
     //properties
     private String coffeeDrink;
     //getting the drink object
-    private MakeCoffee drink;
+    private Coffee drink;
     private Input input;
     
-    public TakeOrder(Input input, MakeCoffee drink){
+    public Order(Input input, Coffee drink){
         this.input = input;
         this.drink = drink;
     }
