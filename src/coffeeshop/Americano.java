@@ -12,23 +12,10 @@ package coffeeshop;
 public class Americano implements MakeCoffee{
 
     @Override
-    public void getSize() {
-        
+    public void makeDrink() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void GrindBeans() {
-        
-    }
-
-    @Override
-    public void brew() {
-        
-    }
-
-    @Override
-    public void useMilk(String Type) {
-        
-    }
+    
     
 }

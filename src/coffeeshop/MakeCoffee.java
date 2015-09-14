@@ -11,8 +11,5 @@ package coffeeshop;
  * @author Alyson
  */
 public interface MakeCoffee {
-    public abstract void getSize();
-    public abstract void GrindBeans();
-    public abstract void brew();
-    public abstract void useMilk(String Type);
+    public abstract void makeDrink();
 }
