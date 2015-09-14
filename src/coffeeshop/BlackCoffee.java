@@ -9,7 +9,7 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public class BlackCoffee implements Coffee, Size, Creamer, Milk {
+public class BlackCoffee implements Coffee, Size, Creamer, Milk, Caffeine {
     private String size;
     
     //access input and printer
@@ -20,7 +20,8 @@ public class BlackCoffee implements Coffee, Size, Creamer, Milk {
     public String makeDrink() {
         size = size();
         String creamer = addCream();
-        String order = size + creamer;
+        String caffeinated = regularOrDecaf();
+        String order = size + caffeinated + creamer;
         return order;
     }
 
@@ -77,6 +78,20 @@ public class BlackCoffee implements Coffee, Size, Creamer, Milk {
             cupSize = input.order();
         }
         return cupSize + " ";
+    }
+
+    @Override
+    public String regularOrDecaf() {
+        //ask for regular or decaf
+        printer.println("Regular or Decaf?");
+        //assign to string
+        String type = input.order();
+        //check
+        while(!(type.equals("regular")) && !(type.equals("decaf"))){
+            printer.println("incorrect entry, please enter: regular or decaf");
+            type = " " + input.order() + " ";
+        }
+        return type;
     }
 
   

@@ -9,7 +9,7 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor {
+public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor, Caffeine {
     private String size;
     //access input and printer
     Input input = new ConsoleOrderInput();
@@ -19,10 +19,11 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor 
     @Override
     public String makeDrink() {
         size = size();
+        String caffeine = regularOrDecaf();
         String numShots = addEspressoShot();
         String creamer = addCream();
         String flavor = addFlavor();
-        String order = size + numShots + " shot"+ creamer + " " + flavor;
+        String order = size + caffeine + numShots + " shot"+ creamer + " " + flavor;
         return order;
     }
 
@@ -112,6 +113,20 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor 
             cupSize = input.order();
         }
         return cupSize + " ";
+    }
+
+    @Override
+    public String regularOrDecaf() {
+        //ask for regular or decaf
+        printer.println("Regular or Decaf?");
+        //assign to string
+        String type = input.order();
+        //check
+        while(!(type.equals("regular")) && !(type.equals("decaf"))){
+            printer.println("incorrect entry, please enter: regular or decaf");
+            type = " " + input.order() + " ";
+        }
+        return type;
     }
 
 }
