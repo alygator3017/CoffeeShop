@@ -31,4 +31,5 @@ public abstract class Flavor {
         }
         return " " + flavor + " ";
     }
+    public abstract String specialTopping();
 }

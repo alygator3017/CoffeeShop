@@ -23,7 +23,8 @@ public class Americano extends Flavor implements Coffee, Size, Espresso, Creamer
         String numShots = addEspressoShot();
         String creamer = addCream();
         String flavor = addFlavor();
-        String order = size + caffeine + numShots + " shot" + creamer + flavor;
+        String topping = specialTopping();
+        String order = size + caffeine + numShots + " shot" + creamer + flavor + topping;
         return order;
     }
 
@@ -109,6 +110,24 @@ public class Americano extends Flavor implements Coffee, Size, Espresso, Creamer
             type = input.order();
         }
         return " " + type + " ";
+    }
+
+    @Override
+    public String specialTopping() {
+         //ask flavor
+        printer.println("What additional topping would you like to add?");
+        printer.println("Cinnamon, nutmeg, cocoa or none?");
+        String topping = input.order();
+        //check
+        while(!topping.equals("cinnamon") && !topping.equals("nutmeg") && !topping.equals("cocoa") && !topping.equals("none")){
+            printer.println("incorrect flavor entered");
+            printer.println("Cinnamon, nutmeg, cocoa or none?");
+            topping = input.order();
+        }
+        if(topping.equals("none")){
+            topping = "";
+        }
+        return "with a sprinkle of " + topping + " ";
     }
 
 }
