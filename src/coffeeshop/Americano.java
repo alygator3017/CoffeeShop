@@ -9,7 +9,7 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor, Caffeine {
+public class Americano extends Flavor implements Coffee, Size, Espresso, Creamer, Milk, Caffeine {
     private String size;
     //access input and printer
     Input input = new ConsoleOrderInput();
@@ -80,25 +80,7 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor,
             milk = "cream";
         }
         return milk;
-    }
-
-    @Override
-    public String addFlavor() {
-        //ask flavor
-        printer.println("What flavor would you like to add?");
-        printer.println("Caramel, Vanilla, Mocha, White Chocolate or none?");
-        String flavor = input.order();
-        //check
-        while(!flavor.equals("caramel") && !flavor.equals("vanilla") && !flavor.equals("mocha") && !flavor.equals("white chocolate") && !flavor.equals("none")){
-            printer.println("incorrect flavor entered");
-            printer.println("Caramel, Vanilla, Mocha, White Chocolate or none?");
-            flavor = input.order();
-        }
-        if(flavor.equals("none")){
-            flavor = "";
-        }
-        return " " + flavor + " ";
-    }
+    }    
 
 
     @Override
