@@ -20,7 +20,7 @@ public class BlackCoffee implements Coffee, Size, Creamer, Milk {
     public String makeDrink() {
         size = size();
         String creamer = addCream();
-        String order = size + creamer + " ";
+        String order = size + creamer;
         return order;
     }
 
