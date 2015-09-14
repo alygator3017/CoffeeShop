@@ -87,16 +87,19 @@ public class Latte extends Flavor implements Coffee, Size, Espresso, Milk, Caffe
     public String specialTopping() {
         //ask flavor
         printer.println("What additional topping would you like to add?");
-        printer.println("Cinnamon, nutmeg, cocoa or none?");
+        printer.println("Cinnamon, nutmeg, whip cream or none?");
         String topping = input.order();
         //check
-        while(!topping.equals("cinnamon") && !topping.equals("nutmeg") && !topping.equals("cocoa") && !topping.equals("none")){
+        while(!topping.equals("cinnamon") && !topping.equals("nutmeg") && !topping.equals("whip cream") && !topping.equals("none")){
             printer.println("incorrect flavor entered");
-            printer.println("Cinnamon, nutmeg, cocoa or none?");
+            printer.println("Cinnamon, nutmeg, whip cream or none?");
             topping = input.order();
         }
         if(topping.equals("none")){
             topping = "";
+        }
+        if(topping.equals("whip cream")){
+            return "with " + topping + " ";
         }
         return "with a sprinkle of " + topping + " ";
     }
