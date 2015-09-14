@@ -27,9 +27,10 @@ public class Order {
     }
     
     //take order from input and make coffee drink
-    public void makeDrink(){
+    public String makeDrink(){
         coffeeDrink = order;
-        drink.makeDrink();
+        String drinkInfo = drink.makeDrink();
+        return "Here is your " + drinkInfo + " " + coffeeDrink;
     }
 
     public String getCoffeeDrink() {

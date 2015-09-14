@@ -9,22 +9,78 @@ package coffeeshop;
  *
  * @author Alyson
  */
-public class BlackCoffee implements Coffee, Creamer, Milk {
-
+public class BlackCoffee implements Coffee, Size, Creamer, Milk {
+    private String size;
+    
+    //access input and printer
+    Input input = new ConsoleOrderInput();
+    Printer printer = new ConsolePrinter();
+    
     @Override
-    public void makeDrink() {
-        System.out.println("In Black Coffee Make Drink");
+    public String makeDrink() {
+        size = size();
+        String creamer = addCream();
+        String order = size + creamer + " ";
+        return order;
     }
 
     @Override
-    public void addCream() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String addCream() {
+         //ask for cream
+        printer.println("Would you like room for cream?");
+        //assign to string
+        String cream = input.order();
+        String milk;
+        //check
+        while (!(cream.equals("yes")) && !(cream.equals("no"))) {
+            printer.println("Please enter yes or no");
+            printer.println("Would you like room for cream?");
+            cream = input.order();
+        }
+        //do something
+        if (cream.equals("yes")) {
+            milk = typeOfMilk();
+            return " with " + milk;
+        }else{
+            return cream + " creamer";
+        }
     }
 
     @Override
-    public void typeOfMilk() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String typeOfMilk() {
+        //ask what kind of milk
+        printer.println("Please choose your milk: Skim or creamer");
+        //assign to string
+        String milk = input.order();
+        //check
+        while (!(milk.equals("skim")) && !(milk.equals("creamer"))) {
+            printer.println("Sorry we do not have that, please enter Skim or Creamer");
+            milk = input.order();
+        }
+        if(milk.equals("skim")){
+            milk = "a skim topper";
+        }else{
+            milk = "cream";
+        }
+        return milk;
     }
+
+    @Override
+    public String size() {
+        // ask for size
+        printer.println("What size? small, medium or large?");
+        //assign to string
+        String cupSize = input.order();
+        //check
+        while(!(cupSize.equals("small")) && !(cupSize.equals("medium")) && !(cupSize.equals("large"))){
+            printer.println("Incorrect size, please enter: small, medium or large");
+            cupSize = input.order();
+        }
+        return cupSize + " ";
+    }
+
+  
+    
 
     
     

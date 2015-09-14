@@ -11,18 +11,19 @@ package coffeeshop;
  */
 public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor {
     private String size;
-//    //access input and printer
+    //access input and printer
     Input input = new ConsoleOrderInput();
     Printer printer = new ConsolePrinter();
     
 
     @Override
-    public void makeDrink() {
+    public String makeDrink() {
         size = size();
         String numShots = addEspressoShot();
         String creamer = addCream();
         String flavor = addFlavor();
-        
+        String order = size + numShots + " shot"+ creamer + " " + flavor;
+        return order;
     }
 
     @Override
@@ -30,9 +31,9 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor 
         String shots;
         //find shot amount
         switch (size) {
-            case "small": return shots = "2";
-            case "medium": return shots = "3";
-            default: return shots = "4";
+            case "small": return shots = "Double";
+            case "medium": return shots = "Triple";
+            default: return shots = "Four";
         }
         
     }
@@ -72,12 +73,30 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor 
             printer.println("Sorry we do not have that, please enter Skim or Creamer");
             milk = input.order();
         }
+        if(milk.equals("skim")){
+            milk = "a skim topper";
+        }else{
+            milk = "cream";
+        }
         return milk;
     }
 
     @Override
     public String addFlavor() {
-        return null;
+        //ask flavor
+        printer.println("What flavor would you like to add?");
+        printer.println("Caramel, Vanilla, Mocha, White Chocolate or none?");
+        String flavor = input.order();
+        //check
+        while(!flavor.equals("caramel") && !flavor.equals("vanilla") && !flavor.equals("mocha") && !flavor.equals("white chocolate") && !flavor.equals("none")){
+            printer.println("incorrect flavor entered");
+            printer.println("Caramel, Vanilla, Mocha, White Chocolate or none?");
+            flavor = input.order();
+        }
+        if(flavor.equals("none")){
+            flavor = "";
+        }
+        return flavor;
     }
 
 
@@ -86,13 +105,13 @@ public class Americano implements Coffee, Size, Espresso, Creamer, Milk, Flavor 
         // ask for size
         printer.println("What size? small, medium or large?");
         //assign to string
-        String size = input.order();
+        String cupSize = input.order();
         //check
-        while(!(size.equals("small")) && !(size.equals("medium")) && !(size.equals("large"))){
+        while(!(cupSize.equals("small")) && !(cupSize.equals("medium")) && !(cupSize.equals("large"))){
             printer.println("Incorrect size, please enter: small, medium or large");
-            size = input.order();
+            cupSize = input.order();
         }
-        return size;
+        return cupSize + " ";
     }
 
 }

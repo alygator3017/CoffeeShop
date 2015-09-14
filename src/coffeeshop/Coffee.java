@@ -11,6 +11,6 @@ package coffeeshop;
  * @author Alyson
  */
 public interface Coffee {
-    public abstract void makeDrink();
+    public abstract String makeDrink();
     
 }

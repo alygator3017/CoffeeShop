@@ -17,11 +17,11 @@ public class CoffeeShop {
         Input input = new ConsoleOrderInput();
         //Drink Order String
          //ask for order
-        printer.println("What kind of drink would you like? We have an Americano, a latte or a Black coffee");
+        printer.println("What kind of drink would you like? We have an Americano, a latte or a coffee");
         String drinkOrder = input.order().toLowerCase();
-        while(!drinkOrder.equals("americano") && !drinkOrder.equals("latte") && !drinkOrder.equals("black coffee")){
+        while(!drinkOrder.equals("americano") && !drinkOrder.equals("latte") && !drinkOrder.equals("coffee")){
             printer.println("I'm sorry, you entered an incorrect drink.");
-            printer.println("What kind of drink would you like? We have an Americano, a latte or a Black coffee");
+            printer.println("What kind of drink would you like? We have an Americano, a latte or a coffee");
             input = new ConsoleOrderInput();
             drinkOrder = input.order();
         }
@@ -41,7 +41,7 @@ public class CoffeeShop {
         
         //create order
         Order order = new Order(drinkOrder, input, drink, printer);
-        order.makeDrink();
+        printer.println(order.makeDrink());
         
     }
     
