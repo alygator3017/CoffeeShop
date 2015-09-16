@@ -18,6 +18,10 @@ public class Latte extends FlavoredCoffee implements Coffee, Size, Espresso, Mil
     
     @Override
     public String makeDrink() {
+        //how to make the drink
+        //find size, if reg or decaf, shot amount depending on size,
+        //what kind of milk, if flavor and if topping. Add order together to return
+        //order so that it spits out what the order is
         size = size();
         String caffeine = regularOrDecaf();
         String numShots = addEspressoShot();
@@ -30,12 +34,11 @@ public class Latte extends FlavoredCoffee implements Coffee, Size, Espresso, Mil
 
     @Override
     public String addEspressoShot() {
-        String shots;
         //find shot amount
         switch (size) {
-            case "small": return shots = "single";
-            case "medium": return shots = "double";
-            default: return shots = "double";
+            case "small": return "single";
+            case "medium": return "double";
+            default: return "double";
         }
     }
 

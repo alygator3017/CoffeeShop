@@ -18,6 +18,10 @@ public class Americano extends FlavoredCoffee implements Coffee, Size, Espresso,
 
     @Override
     public String makeDrink() {
+        //how to make the drink
+        //find size, if reg or decaf, shot amount depending on size, if cream
+        //and what kind, if flavor and if topping. Add order together to return
+        //order so that it spits out what the order is
         size = size();
         String caffeine = regularOrDecaf();
         String numShots = addEspressoShot();
@@ -33,9 +37,9 @@ public class Americano extends FlavoredCoffee implements Coffee, Size, Espresso,
         String shots;
         //find shot amount
         switch (size) {
-            case "small": return shots = "double";
-            case "medium": return shots = "triple";
-            default: return shots = "four";
+            case "small": return "double";
+            case "medium": return "triple";
+            default: return "four";
         }
         
     }
@@ -119,6 +123,7 @@ public class Americano extends FlavoredCoffee implements Coffee, Size, Espresso,
         printer.println("Cinnamon, nutmeg, cocoa or none?");
         String topping = input.order();
         //check
+        
         while(!topping.equals("cinnamon") && !topping.equals("nutmeg") && !topping.equals("cocoa") && !topping.equals("none")){
             printer.println("incorrect flavor entered");
             printer.println("Cinnamon, nutmeg, cocoa or none?");

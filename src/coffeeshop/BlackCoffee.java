@@ -18,6 +18,10 @@ public class BlackCoffee implements Coffee, Size, Creamer, Milk, Caffeine {
     
     @Override
     public String makeDrink() {
+        //how to make the drink
+        //find size, if reg or decaf, if cream
+        //and what kind, Add order together to return
+        //order so that it spits out what the order is
         size = size();
         String creamer = addCream();
         String caffeinated = regularOrDecaf();
